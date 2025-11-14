@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganesh Book Stores - Coming Soon</title>
+
+<style>
+    :root {
+        --bg: #f7f7f7;
+        --card-bg: #ffffff;
+        --text: #2a2a2a;
+        --subtext: #555;
+        --border: #ddd;
+        --toggle-bg: #e0e0e0;
+    }
+
+    body.dark {
+        --bg: #121212;
+        --card-bg: #1e1e1e;
+        --text: #f5f5f5;
+        --subtext: #bbbbbb;
+        --border: #444;
+        --toggle-bg: #333;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+        text-align: center;
+        transition: background 0.3s ease;
+    }
+
+    .container {
+        max-width: 550px;
+        background: var(--card-bg);
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid var(--border);
+        animation: fadeInUp 1s ease-in-out;
+        transition: background 0.3s ease, border 0.3s ease;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .logo {
+        width: 150px;
+        margin-bottom: 20px;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 28px;
+        color: var(--text);
+        animation: slideIn 1.2s ease;
+    }
+
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    p {
+        font-size: 16px;
+        margin-top: 10px;
+        color: var(--subtext);
+        line-height: 1.6;
+        animation: fadeIn 1.8s ease-in-out;
+    }
+
+    .footer-text {
+        margin-top: 25px;
+        font-size: 14px;
+        color: var(--subtext);
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--toggle-bg);
+        border: none;
+        border-radius: 50px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--text);
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+        opacity: 0.8;
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 22px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .logo {
+            width: 120px;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+
+<div class="container">
+    <img src="logo.png" alt="Ganesh Book Stores Logo" class="logo">
+
+    <h1>Coming Soon</h1>
+
+    <p><strong>Ganesh Book Stores</strong><br>
+        Your one-stop destination for all school-related educational products.
+    </p>
+
+    <p>
+        Offering quality Books, Art & Craft Materials, Stationery, and Toys for students across India.
+    </p>
+
+    <div class="footer-text">
+        © 2025 Ganesh Book Stores. All Rights Reserved.
+    </div>
+</div>
+
+<script>
+    function toggleMode() {
+        document.body.classList.toggle("dark");
+
+        const btn = document.querySelector(".toggle-btn");
+        if (document.body.classList.contains("dark")) {
+            btn.textContent = "☀️ Light Mode";
+        } else {
+            btn.textContent = "🌙 Dark Mode";
+        }
+    }
+</script>
+
+</body>
+</html>
